@@ -28,10 +28,20 @@ function App() {
       })
     })
   }
+
+  function deleteTodo(id){
+    setTodos(currentTodos => {
+      return currentTodos.filter(todo => todo.id !==id)
+    })
+  }
   console.log(todos)
   return (
 
     <>
+
+<div className="custom-page"> 
+  
+    <div className="custom-form"> 
       <NewTodoForm onSubmit={addTodo} />
 
       <h1 className="header">
@@ -44,13 +54,13 @@ function App() {
           // eslint-disable-next-line react/jsx-key
           return (
             <>
-              <li key={todo.id}>
+              <li className="todoList" key={todo.id}>
                 <label>
                   <input type="checkbox" checked={todo.completed} onChange={e => toggleTodo(todo.id, e.target.checked)} />
                   {todo.title}
 
                 </label>
-                <button className="btn btn-danger">
+                <button onClick={() => deleteTodo(todo.id)} className="btn btn-danger">
                   delete
                 </button>
 
@@ -61,6 +71,8 @@ function App() {
         })}
 
       </ul>
+      </div>
+      </div>
     </>
 
 

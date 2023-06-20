@@ -3,13 +3,7 @@
   box-sizing: border-box;
 }
 
-body {
-  background: #333;
-  color: hsl(200, 100%, 90%);
-  max-width: 400px;
-  padding: 1rem;
-  margin: 0 auto;
-}
+
 
 .new-item-form {
   display: flex;
@@ -17,6 +11,20 @@ body {
   gap: 0.5rem;
 }
 
+
+.custom-form {
+  position: relative;
+  z-index: 1;
+  background-color:#8d93b8d7;
+  width: 360px;
+  height: auto;
+  margin: 0 auto;
+  padding: 40px;
+  text-align: center;
+  box-shadow: 0 0 20px rgba(500, 500, 500, 0.9);
+  border-radius: 20px;
+  border: 1px dotted wheat;
+}
 .form-row {
   display: flex;
   flex-direction: column;
@@ -28,7 +36,7 @@ body {
   border: 1px solid hsl(200, 100%, 50%);
   color: hsl(200, 100%, 50%);
   padding: 0.25em 0.5em;
-  border-radius: 0.25em;
+  border-radius: 2em;
   cursor: pointer;
   outline: none;
 }
@@ -53,7 +61,7 @@ body {
   outline: none;
   border: 1px solid hsl(200, 100%, 40%);
   background: hsl(200, 100%, 30%);
-  border-radius: 0.25em;
+  border-radius: 1em;
   padding: 0.25em 0.5em;
   color: hsl(200, 100%, 90%);
 }
@@ -96,6 +104,7 @@ body {
   gap: 0.25rem;
   cursor: pointer;
   align-items: center;
+  width: 300px;
 }
 
 .list li:has(input:focus-visible) label {
@@ -119,6 +128,7 @@ body {
   background: hsl(200, 100%, 90%);
   border-radius: 0.25em;
   display: flex;
+  
   justify-content: center;
   align-items: center;
 }
@@ -138,3 +148,17 @@ body {
 .list li:has(input:checked) label:hover::before {
   background: hsl(200, 100%, 30%);
 }
+
+.custom-page {
+
+  height: 100vh;
+  display: flex;
+  
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: url(./../asset/White-Aesthetic-Minimalist-Desktop-Organizer-Wallpaper.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
