@@ -1,11 +1,22 @@
 import { useState } from "react"
 import {IoIosAddCircle} from "@react-icons/all-files/io/IoIosAddCircle"
+import { message } from 'antd';
+
 
 // eslint-disable-next-line react/prop-types
 export function NewTodoForm({ onSubmit }) {
   const [newItem, setNewItem] = useState("")
-  function handleSubmit(e) {
+  const [messageApi, contextHolder] = message.useMessage();
+  const success = () => {
+    messageApi.open({
+      type: 'success',
+      content: 'You have succefully added a todo...',
+    });
+  };
 
+  function handleSubmit(e) {
+    
+    
     e.preventDefault()
 
     if (newItem === "") return
@@ -15,6 +26,8 @@ export function NewTodoForm({ onSubmit }) {
   }
 
   return (
+    <> 
+ 
     <form className="new-item-form" onSubmit={handleSubmit}>
 
       <div className="wrapper">
@@ -24,12 +37,13 @@ export function NewTodoForm({ onSubmit }) {
           <label htmlFor="item"> New Item</label>
         </div>
       </div>
-     
-      <button className="btn" >
+      {contextHolder}
+      <button className="btn" onClick={success}>
       <div className="addLayout"> 
-      <IoIosAddCircle/> Add
+      <IoIosAddCircle className="addIcon"/> Add
       </div>
       </button>
     </form>
+    </>
   )
 }

@@ -2,6 +2,9 @@
 import "./styles.css"
 import { useState } from "react"
 import { NewTodoForm } from "./NewTodoForm"
+import { Button } from 'antd';
+import {MdDelete} from "@react-icons/all-files/md/MdDelete"
+
 
 function App() {
 
@@ -61,9 +64,14 @@ function App() {
                   {todo.title}
 
                 </label>
-                <button onClick={() => deleteTodo(todo.id)} className="btn btn-danger">
-                  delete
-                </button>
+                
+                <Button danger onClick={() => deleteTodo(todo.id)} className="btnDelete">
+                <div className="btnDeleteIconLayout">
+                  <MdDelete className="deleteIcon" />delete
+                  </div>
+                </Button>
+                
+              
 
               </li>
             </>
