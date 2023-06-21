@@ -50,6 +50,7 @@ function App() {
 
 
       <ul className="list">
+      {todos.length === 0 && "No Todos"}
         {todos.map(todo => {
           // eslint-disable-next-line react/jsx-key
           return (

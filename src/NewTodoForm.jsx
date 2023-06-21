@@ -1,4 +1,5 @@
 import { useState } from "react"
+import {IoIosAddCircle} from "@react-icons/all-files/io/IoIosAddCircle"
 
 // eslint-disable-next-line react/prop-types
 export function NewTodoForm({ onSubmit }) {
@@ -15,12 +16,19 @@ export function NewTodoForm({ onSubmit }) {
 
   return (
     <form className="new-item-form" onSubmit={handleSubmit}>
-      <div className="form-row">
-        <label htmlFor="item"> New Item</label>
-        <input value={newItem} onChange={e => setNewItem(e.target.value)} type="text" id="item"></input>
+
+      <div className="wrapper">
+        <div className="input-data">
+          <input value={newItem} required onChange={e => setNewItem(e.target.value)} type="text" id="item"></input>
+          <div className="underline"></div>
+          <label htmlFor="item"> New Item</label>
+        </div>
       </div>
+     
       <button className="btn" >
-        Add
+      <div className="addLayout"> 
+      <IoIosAddCircle/> Add
+      </div>
       </button>
     </form>
   )
